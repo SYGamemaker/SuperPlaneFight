@@ -34,14 +34,26 @@ class Player:
         j发射子弹
         """
         keys = pygame.key.get_pressed()
+        new_x = self.rect.x
+        new_y = self.rect.y
+
         if keys[pygame.K_w]:
-            self.rect.y -= 5
+            new_y -= 5
         if keys[pygame.K_s]:
-            self.rect.y += 5
+            new_y += 5
         if keys[pygame.K_a]:
-            self.rect.x -= 5
+            new_x -= 5
         if keys[pygame.K_d]:
-            self.rect.x += 5
+            new_x += 5
+
+        screen_height = pygame.display.get_surface().get_height()
+        screen_width = pygame.display.get_surface().get_width()
+
+        if (new_y >= screen_height * 2 / 3) and (new_y + self.rect.height <= screen_height):
+            self.rect.y = new_y
+
+        if (new_x >= 0) and (new_x + self.rect.width <= screen_width):
+            self.rect.x = new_x
 
         if keys[pygame.K_j]:
             current_time = pygame.time.get_ticks()
@@ -50,15 +62,6 @@ class Player:
                 self.shoot_timer = current_time
 
         self.bullets.update()
-
-        new_x = self.rect.x
-        new_y = self.rect.y
-        screen_height = pygame.display.get_surface().get_height()
-        screen_width = pygame.display.get_surface().get_width()
-        if (new_y >= screen_height * 2 / 3) and (new_y + self.rect.height <= screen_height) and (new_x >= 0) and (
-                new_x + self.rect.width <= screen_width):
-            self.rect.x = new_x
-            self.rect.y = new_y
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
