@@ -25,3 +25,4 @@ def draw_start_menu(width, height, img):
     screen.blit(btn[1], (width // 2 - btn[1].get_width() // 2, height // 2))
     screen.blit(btn[2], (width // 2 - btn[2].get_width() // 2, height * 3 // 4))
     pygame.display.flip()
+    return screen, btn

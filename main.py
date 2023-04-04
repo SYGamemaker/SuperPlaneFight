@@ -7,11 +7,9 @@
 import sys
 from constans import *
 from utils import *
+from listener import *
 
-draw_start_menu(screen_width, screen_height, img_path)
+screen = draw_start_menu(screen_width, screen_height, img_path)
 
 while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    handle_event(screen[0], screen[1])
