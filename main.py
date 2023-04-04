@@ -8,7 +8,7 @@ import sys
 
 import pygame
 
-from SuperPlaneFight.plane import Player
+from plane import Player
 from constans import *
 from menu import Menu
 

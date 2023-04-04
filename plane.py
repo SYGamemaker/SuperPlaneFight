@@ -6,8 +6,8 @@
 # @Software: PyCharm
 import os
 import pygame
-from SuperPlaneFight.bullet import PlayerBullet
-from SuperPlaneFight.constans import SCREEN_WIDTH, SCREEN_HEIGHT
+from bullet import PlayerBullet
+from constans import SCREEN_WIDTH, SCREEN_HEIGHT
 
 
 class Player:
