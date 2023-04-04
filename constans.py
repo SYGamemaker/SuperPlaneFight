@@ -2,21 +2,24 @@
 # @Time : 2023/4/3 5:21 PM
 # @Author : 夏宇奇
 # @Email : yuqi.xia@shanbay.com
-# @File : constans.py.py
+# @File : constans.py
 # @Software: PyCharm
-import os
-from enum import Enum
+# 屏幕设置
+screen_width, screen_height = 800, 600
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-FONT_PATH = os.path.join("resources", "font", "NotoSansSC-Light.otf")
+# 颜色设置
+white = (255, 255, 255)
+black = (0, 0, 0)
 
+# 字体设置
+default_font = "Arial"
+menu_btn_font_size = 20
 
-class GameState(Enum):
-    """
-    游戏状态码
-    """
-    MENU = 0
-    PLAYING = 1
-    GAME_OVER = 2
-    QUIT = 3
+# 资源设置
+font_path = 'resources/Font/NotoSansSC-Black.otf'
+img_path = ""
+
+# 文本设置
+start_game_text = "开始游戏"
+history_score_text = "历史得分"
+exit_game_text = "退出游戏"
